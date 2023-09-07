@@ -5,15 +5,18 @@ colorscheme dracula
 " relative line number 
 set relativenumber
 
-" set clipboard to primary(*) and system(+)
-set clipboard=unnamed,unnamedplus
-
 " enable syntax highlighting
 filetype plugin indent on
 syntax on
 
 " no viminfo
 set viminfofile=NONE
+
+" set clipboard to primary(*) and system(+)
+set clipboard=unnamed,unnamedplus
+
+" enable mouse
+set mouse=nvi
 
 " key bindings
 nnoremap i <up>
