@@ -1,0 +1,10 @@
+# lxde
+x11-misc/pcmanfm		~amd64
+x11-libs/libfm			~amd64
+
+# guru
+x11-misc/i3status-rust		~amd64
+
+# guru - build deps
+virtual/rust			~amd64
+dev-lang/rust-bin		~amd64

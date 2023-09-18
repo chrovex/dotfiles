@@ -1,0 +1,23 @@
+# kernel
+sys-kernel/gentoo-sources	symlink
+
+# basic system
+sys-apps/systemd-utils		boot
+app-admin/sudo			-sendmail
+sys-apps/man-pages		-l10n_*
+
+# cli applications
+app-editors/vim			-crypt gpm vim-pager
+dev-vcs/git			-perl
+
+# x window
+media-libs/mesa			-llvm
+media-libs/freetype		harfbuzz
+
+# gui applications
+x11-libs/libfm			-automount exif gtk
+
+# guru
+
+# guru - build deps
+
