@@ -1,0 +1,176 @@
+/* ==========================================================================
+   File: dracular.rasi
+   Desc: Rofi theme based on dracula colour palette
+   Author: chrovex <chrovex@outlook.com>
+   ========================================================================== */
+* {
+    /* Theme settings */
+    highlight: bold italic;
+    scrollbar: true;
+
+    /* Dracula color palette */
+    dracula-background: #282a36;
+    dracula-selection: #44475a;
+    dracula-foreground: #f8f8f2;
+    dracula-comment: #6272a4;
+    dracula-cyan: #8be9fd;
+    dracula-green: #50fa7b;
+    dracula-orange: #ffb86c;
+    dracula-pink: #ff79c6;
+    dracula-purple: #bd93f9;
+    dracula-red: #ff5555;
+    dracula-yellow: #f1fa8c;
+
+    /* Theme colors */
+    background:                  @dracula-background;
+    background-color:            @background;
+    foreground:                  @dracula-foreground;
+    border-color:                @dracula-comment;
+    separatorcolor:              @dracula-selection;
+    scrollbar-handle:            @dracula-selection;
+
+    normal-background:           @background;
+    normal-foreground:           @foreground;
+    alternate-normal-background: @dracula-selection;
+    alternate-normal-foreground: @foreground;
+    selected-normal-background:  @dracula-comment;
+    selected-normal-foreground:  @foreground;
+
+    active-background:           @background;
+    active-foreground:           @dracula-yellow;
+    alternate-active-background: @dracula-selection;
+    alternate-active-foreground: @dracula-yellow;
+    selected-active-background:  @dracula-comment;
+    selected-active-foreground:  @dracula-yellow;
+
+    urgent-background:           @background;
+    urgent-foreground:           @dracula-pink;
+    alternate-urgent-background: @dracula-selection;
+    alternate-urgent-foreground: @dracula-pink;
+    selected-urgent-background:  @dracula-comment;
+    selected-urgent-foreground:  @dracula-pink;
+}
+
+window {
+    background-color: @background;
+    border:           2;
+    padding:          2;
+}
+
+mainbox {
+    border:  0;
+    padding: 0;
+}
+
+message {
+    border:       2px 0 0;
+    border-color: @separatorcolor;
+    padding:      1px;
+}
+
+textbox {
+    highlight:  @highlight;
+    text-color: @foreground;
+}
+
+listview {
+    border:       2px solid 0 0;
+    padding:      2px 0 0;
+    border-color: @separatorcolor;
+    spacing:      2px;
+    scrollbar:    @scrollbar;
+}
+
+element {
+    border:  0;
+    padding: 2px;
+}
+
+element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+
+element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+
+element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+
+element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+
+element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+
+element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+
+scrollbar {
+    width:        6px;
+    border:       0;
+    handle-color: @scrollbar-handle;
+    handle-width: 6px;
+    padding:      0;
+}
+
+mode-switcher {
+    border:       2px 0 0;
+    border-color: @separatorcolor;
+}
+
+inputbar {
+    spacing:    0;
+    text-color: @normal-foreground;
+    padding:    2px;
+    children:   [ prompt, textbox-prompt-sep, entry, case-indicator ];
+}
+
+case-indicator,
+entry,
+prompt,
+button {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+
+button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+textbox-prompt-sep {
+    expand:     false;
+    str:        ":";
+    text-color: @normal-foreground;
+    margin:     0 0.3em 0 0;
+}
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}
