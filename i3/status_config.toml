@@ -1,0 +1,63 @@
+[theme]
+theme = "dracula"
+
+[icons]
+icons = "awesome5"
+
+[[block]]
+block = "disk_space"
+path = "/"
+interval = 30
+format = " $icon / $available.eng(prefix:M) "
+warning = 10
+alert = 5
+[[block.click]]
+button = "double_left"
+cmd = "exec pcmanfm /"
+
+[[block]]
+block = "disk_space"
+path = "/home"
+interval = 30
+format = " $icon /home $available.eng(prefix:M) "
+warning = 10
+alert = 5
+[block.icons_overrides]
+disk_drive = "\ue065"
+[[block.click]]
+button = "double_left"
+cmd = "exec pcmanfm ${HOME}"
+
+[[block]]
+block = "cpu"
+format = " $icon $utilization "
+interval = 1
+[[block.click]]
+button = "double_left"
+cmd = "alacritty --class htop -t htop -e htop"
+
+[[block]]
+block = "memory"
+format = " $icon $mem_used_percents "
+format_alt = " $icon_swap $swap_used_percents "
+interval = 5
+warning_mem = 90
+warning_swap = 90
+critical_mem = 95
+critical_swap = 95
+[block.icons_overrides]
+memory_mem = "\uf538"
+memory_swap = "\uf1b2"
+
+[[block]]
+block = "net"
+device = "enp0s3"
+interval = 5
+format = " $icon $speed_down.eng(prefix:K) "
+format_alt = " $icon $speed_up.eng(prefix:K) "
+
+
+[[block]]
+block = "time"
+format = " $icon $timestamp.datetime(f:'%I:%M %p') "
+interval = 1
