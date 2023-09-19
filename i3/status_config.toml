@@ -12,8 +12,8 @@ format = " $icon / $available.eng(prefix:M) "
 warning = 10
 alert = 5
 [[block.click]]
-button = "double_left"
-cmd = "exec pcmanfm /"
+button = "left"
+cmd = "pcmanfm /"
 
 [[block]]
 block = "disk_space"
@@ -25,15 +25,15 @@ alert = 5
 [block.icons_overrides]
 disk_drive = "\ue065"
 [[block.click]]
-button = "double_left"
-cmd = "exec pcmanfm ${HOME}"
+button = "left"
+cmd = "pcmanfm ${HOME}"
 
 [[block]]
 block = "cpu"
 format = " $icon $utilization "
 interval = 1
 [[block.click]]
-button = "double_left"
+button = "left"
 cmd = "alacritty --class htop -t htop -e htop"
 
 [[block]]
@@ -53,9 +53,15 @@ memory_swap = "\uf1b2"
 block = "net"
 device = "enp0s3"
 interval = 5
-format = " $icon $speed_down.eng(prefix:K) "
-format_alt = " $icon $speed_up.eng(prefix:K) "
+format = " $icon $speed_down.eng(prefix:K)↓ "
+format_alt = " $icon $speed_up.eng(prefix:K)↑ "
 
+[[block]]
+block = "sound"
+driver = "alsa"
+format = " $icon $volume.eng(hide_unit:true) "
+step_width = 10
+show_volume_when_muted = true
 
 [[block]]
 block = "time"
