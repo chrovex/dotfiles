@@ -22,8 +22,5 @@ if [ -f "$usermodmap" ]; then
 	xmodmap "$usermodmap"
 fi
 
-# start picom
-#picom --experimental-backends &
-
 # start i3
 exec dbus-launch --exit-with-session i3
