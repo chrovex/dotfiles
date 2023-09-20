@@ -64,16 +64,19 @@ set $wallpaper ${HOME}/.local/share/backgrounds/icefire.png
 exec --no-startup-id xsetroot -solid $back
 exec --no-startup-id xwallpaper --center $wallpaper
 
-# dunst is a lightweight replacement for the notification-daemons provided by most desktop environments
-exec --no-startup-id dunst
-bindsym $mod+bracketleft exec --no-startup-id dunstctl history-pop
-bindsym $mod+bracketright exec --no-startup-id dunstctl close-all
+# picom is a standalone compositor for Xorg
+exec --no-startup-id picom --daemon
 
-# Use amixer to adjust volume in ALSA.
+# use amixer to adjust volume in ALSA.
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set 'Master' 10%+ unmute
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set 'Master' 10%- unmute
 bindsym XF86AudioMute exec --no-startup-id amixer set 'Master' toggle
 # bindsym XF86AudioMicMute exec --no-startup-id mixer set 'Capture' toggle
+
+# dunst is a lightweight replacement for the notification-daemons provided by most desktop environments
+exec --no-startup-id dunst
+bindsym $mod+bracketleft exec --no-startup-id dunstctl history-pop
+bindsym $mod+bracketright exec --no-startup-id dunstctl close-all
 
 
 ######## WINDOW MANAGER KEY BINDINGS ########
