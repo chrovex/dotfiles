@@ -1,9 +1,12 @@
+# temporary
+
 # kernel
 sys-kernel/gentoo-sources	symlink
 
 # basic system
 sys-apps/systemd-utils		boot
 app-admin/sudo			-sendmail
+app-text/xmlto			text
 sys-apps/man-pages		-l10n_*
 
 # cli applications
@@ -11,8 +14,11 @@ app-editors/vim			-crypt gpm vim-pager
 dev-vcs/git			-perl
 
 # x window
+dev-libs/glib			-dbus -elf
 media-libs/mesa			-llvm
 media-libs/freetype		harfbuzz
+media-sound/alsa-utils		-libsamplerate	
+x11-misc/picom			opengl
 
 # gui applications
 x11-libs/libfm			-automount exif gtk
